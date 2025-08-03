@@ -1,0 +1,383 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0.5rem;
+  text-align: center;
+  width: 100%;
+}
+
+.popup-container {
+  width: 400px;
+  min-height: 500px;
+  padding: 16px;
+  background: #1a1a1a;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 1px solid #333;
+}
+
+.popup-header {
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #333;
+  text-align: center;
+}
+
+.popup-header h1 {
+  margin: 0 0 8px 0;
+  color: #1da1f2;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.warning-text {
+  font-size: 12px;
+  color: #ff6b6b;
+  opacity: 0.8;
+  font-style: italic;
+}
+
+.stats-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.stat-card {
+  background: #2a2a2a;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  border: 1px solid #333;
+  transition: all 0.2s ease;
+}
+
+.stat-card:hover {
+  border-color: #444;
+  transform: translateY(-1px);
+}
+
+.stat-card.highlight {
+  background: linear-gradient(135deg, #2a2a2a 0%, #3a2a2a 100%);
+  border-color: #ff6b6b;
+}
+
+.stat-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1da1f2;
+  margin-bottom: 4px;
+}
+
+.stat-card.highlight .stat-number {
+  color: #ff6b6b;
+}
+
+.stat-label {
+  font-size: 0.875rem;
+  color: #888;
+  font-weight: 500;
+}
+
+.unfollowers-section {
+  margin-bottom: 28px;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.section-header h3 {
+  margin: 0;
+  color: #ff6b6b;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.count-badge {
+  background: #ff6b6b;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.search-container {
+  margin-bottom: 12px;
+  position: relative;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px 16px;
+  background: #2a2a2a;
+  border: 1px solid #444;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #1da1f2;
+  box-shadow: 0 0 0 2px rgba(29, 161, 242, 0.2);
+}
+
+.search-input::placeholder {
+  color: #888;
+  font-style: italic;
+}
+
+.search-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+  font-size: 0.9rem;
+  pointer-events: none;
+}
+
+.unfollowers-list {
+  max-height: 380px;
+  overflow-y: auto;
+  background: #2a2a2a;
+  border-radius: 8px;
+  border: 1px solid #333;
+}
+
+.unfollowers-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.unfollowers-list::-webkit-scrollbar-track {
+  background: #333;
+}
+
+.unfollowers-list::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 3px;
+}
+
+.unfollowers-list::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
+
+.unfollower-item {
+  padding: 14px 18px;
+  border-bottom: 1px solid #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.2s ease;
+}
+
+.unfollower-item:hover {
+  background: #333;
+}
+
+.unfollower-item:last-child {
+  border-bottom: none;
+}
+
+.user-info {
+  flex: 1;
+  text-align: left;
+}
+
+.unfollower-username {
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 2px;
+  font-size: 0.9rem;
+}
+
+.unfollower-handle {
+  color: #1da1f2;
+  font-size: 0.8rem;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.unfollower-handle:hover {
+  color: #1991db;
+  text-decoration: underline;
+}
+
+.unfollower-indicator {
+  opacity: 0.5;
+  font-size: 1.2rem;
+}
+
+.more-indicator {
+  text-align: center;
+  color: #888;
+  padding: 12px;
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
+.empty-state {
+  text-align: center;
+  color: #888;
+  padding: 60px 20px;
+}
+
+.empty-icon {
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+  opacity: 0.5;
+}
+
+.empty-state p {
+  margin: 8px 0;
+  font-size: 0.95rem;
+}
+
+.empty-subtitle {
+  font-size: 0.8rem !important;
+  opacity: 0.7;
+  font-style: italic;
+}
+
+.actions-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.sync-button {
+  background: linear-gradient(135deg, #1da1f2 0%, #1991db 100%);
+  color: white;
+  border: none;
+  padding: 14px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.sync-button:hover {
+  background: linear-gradient(135deg, #1991db 0%, #1780c2 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(29, 161, 242, 0.3);
+}
+
+.sync-button.collecting {
+  background: linear-gradient(135deg, #ff6b6b 0%, #e55555 100%);
+}
+
+.sync-button.collecting:hover {
+  background: linear-gradient(135deg, #e55555 0%, #cc4444 100%);
+  box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+}
+
+.sync-button:disabled {
+  background: #666;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.secondary-button {
+  background: #2a2a2a;
+  color: #ccc;
+  border: 1px solid #444;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+}
+
+.secondary-button:hover {
+  background: #333;
+  border-color: #555;
+  color: #fff;
+}
+
+.loading {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #ffffff;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.last-updated {
+  font-size: 0.75rem;
+  color: #666;
+  text-align: center;
+  margin-bottom: 12px;
+  font-style: italic;
+}
+
+.disclaimer {
+  font-size: 0.7rem;
+  color: #555;
+  text-align: center;
+  line-height: 1.4;
+  padding: 8px;
+  background: rgba(255, 107, 107, 0.1);
+  border-radius: 6px;
+  border: 1px solid rgba(255, 107, 107, 0.2);
+  font-style: italic;
+}
+
+/* Legacy classes for backward compatibility */
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.sync-button:disabled {
+  background: #666;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+} 
