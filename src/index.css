@@ -367,7 +367,6 @@ body {
   font-style: italic;
 }
 
-/* Legacy classes for backward compatibility */
 .stats-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;

@@ -3,6 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
+  "icon": "public/extension_icon.png",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
